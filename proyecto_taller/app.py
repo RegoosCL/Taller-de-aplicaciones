@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, session, url_for
+from flask import Flask, render_template, redirect, request, session, url_for, jsonify
 from flask_mysqldb import MySQL
 
 app = Flask(__name__, template_folder='template')
@@ -57,53 +57,68 @@ def login():
         _password = request.form['txtPassword']
 
         cur = mysql.connection.cursor()
-        cur.execute('SELECT * FROM usuario WHERE correo = %s AND password = %s', (_correo, _password))
         cur.execute('SELECT * FROM admin WHERE correo = %s AND password = %s', (_correo, _password))
-        account = cur.fetchone()
+        admin_account = cur.fetchone()
 
-        if account:
+        if admin_account:
             session['logueado'] = True
-            session['id'] = account['id']
-            return redirect(url_for('admin'))
-        if account:
-            session['logueado'] = True
-            session['id'] = account['id']
-            return redirect(url_for('administrador'))        
-        else:
-            return render_template('formulario.html', mensaje="usuario incorrecto")
-
-
+            session['id'] = admin_account['id']
+            return redirect(url_for('administrador'))
         
+        cur.execute('SELECT * FROM usuario WHERE correo = %s AND password = %s', (_correo, _password))
+        user_account = cur.fetchone()
+
+        if user_account:
+            session['logueado'] = True
+            session['id'] = user_account['id']
+            return redirect(url_for('admin'))
+        else:
+            return render_template('formulario.html', mensaje="Usuario o contraseña incorrectos")
+
+    return render_template('formulario.html')
 
 @app.route('/crear-registro', methods=["GET", "POST"])
 def crear_registro():
-
-    nombre=request.form['txtNombre']
-    correo=request.form['txtCorreo']
-    password=request.form['txtPassword']
-    rut=request.form['txtRut']
-    telefono=request.form['txtTelefono']
-    postal=request.form['txtPostal']
-    nacimiento=request.form['txtNacimiento']
-    region=request.form['txtRegion']
-    comuna=request.form['txtComuna']
-    calle=request.form['txtCalle']
-    numero=request.form['txtNumero']
-    piso=request.form['txtPiso']
-    referencia=request.form['txtReferencia']
-
+    nombre = request.form['txtNombre']
+    correo = request.form['txtCorreo']
+    password = request.form['txtPassword']
+    rut = request.form['txtRut']
+    telefono = request.form['txtTelefono']
+    postal = request.form['txtPostal']
+    nacimiento = request.form['txtNacimiento']
+    region = request.form['txtRegion']
+    comuna = request.form['txtComuna']
+    calle = request.form['txtCalle']
+    numero = request.form['txtNumero']
+    piso = request.form['txtPiso']
+    referencia = request.form['txtReferencia']
 
     cur = mysql.connection.cursor()
-    cur.execute("INSERT INTO usuario (nombre, correo, password, rut, telefono, postal, nacimiento, region, comuna, calle, numero, piso, referencia) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",(nombre,correo,password,rut,telefono,postal,nacimiento,region,comuna,calle,numero,piso,referencia))
-    account = cur.fetchone()
+    cur.execute("INSERT INTO usuario (nombre, correo, password, rut, telefono, postal, nacimiento, region, comuna, calle, numero, piso, referencia) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)", (nombre, correo, password, rut, telefono, postal, nacimiento, region, comuna, calle, numero, piso, referencia))
     mysql.connection.commit()
 
-    if account:
-        session['logueado'] = True
-        session['id'] = account['id']
-        return redirect(url_for('admin'))
-    else:
-        return render_template('formulario.html', mensaje2="Registro exitoso")
+    return render_template('formulario.html', mensaje2="Registro exitoso")
+
+@app.route('/guardar_arriendo', methods=["POST"])
+def guardar_arriendo():
+    data = request.get_json()
+    modelo = data['modelo']
+    precio_base = data['precio_base']
+    dias = data['dias']
+    precio_final = float(data['precio_final'].replace('CLP ', ''))
+    nombre = data['nombre']
+    correo = data['correo']
+    direccion = data['direccion']
+    telefono = data['telefono']
+
+    cur = mysql.connection.cursor()
+    cur.execute("INSERT INTO arriendo (modelo, precio_base, dias, precio_final, nombre, correo, region, telefono) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
+                (modelo, precio_base, dias, precio_final, nombre, correo, direccion, telefono))
+    mysql.connection.commit()
+    cur.close()
+
+    return jsonify(success=True)
+
 
 if __name__ == '__main__':
     app.secret_key = "javier_hds"

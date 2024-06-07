@@ -9,23 +9,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="../static/estilaso.css" />
+    <link rel="stylesheet" href="../static/estilaso4.css" />
     <style>
       h1 {
-        color: white;
-      }
-      p {
-        color: white;
-      }
-      h4{
-        color: white;
-      }
-      ol{
-        color: white;
-      }
-      div {
-        max-width: 1300px;
-        margin: 0 auto;
+        color: #fff;
+        text-align: center;
       }
     </style>
   </head>
@@ -53,17 +41,17 @@
             <li><a href="{{ url_for('home') }}">Salir</a></li>
           </ul>
           <div class="socials">
-            <a href="https://www.facebook.com/" target="_blank">
+            <a href="https://www.facebook.com/profile.php?id=61560865134916" target="_blank">
               <div class="social">
                 <img src="../static/images/s1.svg" alt="" />
               </div>
             </a>
-            <a href="https://x.com/home" target="_blank">
+            <a href="https://x.com/RegoBike" target="_blank">
               <div class="social">
                 <img src="../static/images/s2.svg" alt="" />
               </div>
             </a>
-            <a href="https://www.instagram.com/" target="_blank">
+            <a href="https://www.instagram.com/bikerg5/" target="_blank">
               <div class="social">
                 <img src="../static/images/s3.svg" alt="" />
               </div>
@@ -76,20 +64,124 @@
 
 <!--Arriendos-->
     
-<div>
-  <br><br><br><br><br><br><br>
+    <div>
+      <br><br><br><br><br><br><br><br><br><br>
 
-
-
-
-
-  <h1>Arriendos</h1>
-
-
-
-
-
-</div>
+      <div class="container">
+        <h1>Arriendo de Bicicletas</h1>
+        <br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Modelo</th>
+                    <th>Precio Base por Día</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Region</th>
+                    <th>Teléfono</th>                                  
+                    <th>Días de Arriendo</th>
+                    <th>Precio Final</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="fila-bicicleta">
+                  
+                    <td class="tableta">
+                      <div class="image-container">
+                        <button class="prev">&lt;</button>
+                        <img src="../static/images/bicicleta1.png" alt="">
+                        <button class="next">&gt;</button>
+                      </div>
+                      <div class="image-list">
+                        <img src="../static/images/bicicleta1.png" alt="" />
+                        <img src="../static/images/bicicleta1-2.png" alt="" />
+                      </div>
+                    </td>
+                    <td>Bicicleta de Montaña</td>
+                    <td class="precio-base">18000</td>
+                    <td><input type="text" class="nombre-usuario" placeholder="Nombre"></td>
+                    <td><input type="email" class="correo-usuario" placeholder="Correo"></td>
+                    <td><input type="text" class="direccion-usuario" placeholder="Region"></td>
+                    <td><input type="tel" class="telefono-usuario" placeholder="Teléfono"></td>
+                    <td><input type="number" class="dias-arriendo" value="0" min="0"></td>
+                    <td class="precio-final">CLP 0</td>
+                    <td><button onclick="confirmarArriendo(this)">Arrendar</button></td>
+                </tr>
+                <tr class="fila-bicicleta">
+                    <td class="tableta">
+                      <div class="image-container">
+                        <button class="prev">&lt;</button>
+                        <img src="../static/images/bicicleta3.png" alt="">
+                        <button class="next">&gt;</button>
+                      </div>
+                      <div class="image-list">
+                        <img src="../static/images/bicicleta3-2.png" alt="" />
+                        <img src="../static/images/bicicleta3-3.png" alt="" />
+                        <img src="../static/images/bicicleta3.png" alt="">
+                      </div>
+                    </td>
+                    <td>Bicicleta de Ciudad</td>
+                    <td class="precio-base">20000</td>
+                    <td><input type="text" class="nombre-usuario" placeholder="Nombre"></td>
+                    <td><input type="email" class="correo-usuario" placeholder="Correo"></td>
+                    <td><input type="text" class="direccion-usuario" placeholder="Region"></td>
+                    <td><input type="tel" class="telefono-usuario" placeholder="Teléfono"></td>
+                    <td><input type="number" class="dias-arriendo" value="0" min="0"></td>
+                    <td class="precio-final">CLP 0</td>
+                    <td><button onclick="confirmarArriendo(this)">Arrendar</button></td>
+                </tr>
+                <tr class="fila-bicicleta">
+                    <td class="tableta">
+                      <div class="image-container">
+                        <button class="prev">&lt;</button>
+                        <img src="../static/images/bicicleta2.png" alt="">
+                        <button class="next">&gt;</button>
+                      </div>
+                      <div class="image-list">
+                        <img src="../static/images/bicicleta2-2.png" alt="" />
+                        <img src="../static/images/bicicleta2-3.png" alt="" />
+                        <img src="../static/images/bicicleta2.png" alt="">
+                      </div>
+                    </td>
+                    <td>Bicicleta Eléctrica</td>
+                    <td class="precio-base">35000</td>
+                    <td><input type="text" class="nombre-usuario" placeholder="Nombre"></td>
+                    <td><input type="email" class="correo-usuario" placeholder="Correo"></td>
+                    <td><input type="text" class="direccion-usuario" placeholder="Region"></td>
+                    <td><input type="tel" class="telefono-usuario" placeholder="Teléfono"></td>
+                    <td><input type="number" class="dias-arriendo" value="0" min="0"></td>
+                    <td class="precio-final">CLP 0</td>
+                    <td><button onclick="confirmarArriendo(this)">Arrendar</button></td>
+                </tr>
+                <tr class="fila-bicicleta">
+                  <td class="tableta">
+                    <div class="image-container">
+                      <button class="prev">&lt;</button>
+                      <img src="../static/images/bicicleta4.png" alt="">
+                      <button class="next">&gt;</button>
+                    </div>
+                    <div class="image-list">
+                      <img src="../static/images/bicicleta4-2.png" alt="" />
+                      <img src="../static/images/bicicleta4-3.png" alt="" />
+                      <img src="../static/images/bicicleta4.png" alt="">
+                    </div>
+                  </td>
+                  <td>Bicicleta de niños</td>
+                  <td class="precio-base">10000</td>
+                  <td><input type="text" class="nombre-usuario" placeholder="Nombre"></td>
+                  <td><input type="email" class="correo-usuario" placeholder="Correo"></td>
+                  <td><input type="text" class="direccion-usuario" placeholder="Region"></td>
+                  <td><input type="tel" class="telefono-usuario" placeholder="Teléfono"></td>
+                  <td><input type="number" class="dias-arriendo" value="0" min="0"></td>
+                  <td class="precio-final">CLP 0</td>
+                  <td><button onclick="confirmarArriendo(this)">Arrendar</button></td>
+              </tr>
+            </tbody>
+        </table>
+        <br><br><br><br><br><br><br><br><br><br><br>
+    </div>
 
 
 
@@ -116,17 +208,17 @@
           <div class="txt">
             <h4>Redes Sociales</h4>
             <div class="socials">
-              <a href="https://www.facebook.com/" target="_blank">
+              <a href="https://www.facebook.com/profile.php?id=61560865134916" target="_blank">
                 <div class="social">
                   <img src="../static/images/s1.svg" alt="" />
                 </div>
               </a>
-              <a href="https://x.com/home" target="_blank">
+              <a href="https://x.com/RegoBike" target="_blank">
                 <div class="social">
                   <img src="../static/images/s2.svg" alt="" />
                 </div>
               </a>
-              <a href="https://www.instagram.com/" target="_blank">
+              <a href="https://www.instagram.com/bikerg5/" target="_blank">
                 <div class="social">
                   <img src="../static/images/s3.svg" alt="" />
                 </div>
@@ -182,17 +274,17 @@
       <div class="links">
         <h4>Redes</h4>
         <div class="socials">
-          <a href="https://www.facebook.com/" target="_blank">
+          <a href="https://www.facebook.com/profile.php?id=61560865134916" target="_blank">
             <div class="social">
               <img src="../static/images/s1.svg" alt="" />
             </div>
           </a>
-          <a href="https://x.com/home" target="_blank">
+          <a href="https://x.com/RegoBike" target="_blank">
             <div class="social">
               <img src="../static/images/s2.svg" alt="" />
             </div>
           </a>
-          <a href="https://www.instagram.com/" target="_blank">
+          <a href="https://www.instagram.com/bikerg5/" target="_blank">
             <div class="social">
               <img src="../static/images/s3.svg" alt="" />
             </div>
@@ -200,5 +292,44 @@
         </div>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="../static/script2.js"></script>
+    
+    <script>
+      // scripts.js
+      
+      document.addEventListener("DOMContentLoaded", function () {
+        const products = document.querySelectorAll(".tableta");
+
+        products.forEach((product) => {
+          const prevButton = product.querySelector(".prev");
+          const nextButton = product.querySelector(".next");
+          const imageContainer = product.querySelector(".image-container img");
+          const imageList = Array.from(
+            product.querySelectorAll(".image-list img")
+          );
+
+          let currentImageIndex = 0;
+
+          prevButton.addEventListener("click", () => {
+            currentImageIndex =
+              currentImageIndex > 0
+                ? currentImageIndex - 1
+                : imageList.length - 1;
+            imageContainer.src = imageList[currentImageIndex].src;
+          });
+
+          nextButton.addEventListener("click", () => {
+            currentImageIndex =
+              currentImageIndex < imageList.length - 1
+                ? currentImageIndex + 1
+                : 0;
+            imageContainer.src = imageList[currentImageIndex].src;
+          });
+        });
+      });
+      
+    </script>
   </body>
+  
 </html>
