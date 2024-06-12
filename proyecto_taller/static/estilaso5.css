@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: #080202;
+    font-family: "Poppins", sans-serif;
+}
+
+
+.option {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    font-size: 4em;
+    margin-bottom: 0.5em;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.option {
+    background-color: #DB241B;
+    color: white;
+    padding: 2em;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 2em;
+}
+
+.option:hover {
+    background-color: #75100b;
+}
+
+@media (max-width: 991px) {
+
+    h1 {
+        text-align: center;
+    }
+    .options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .option {
+        flex-basis: 100%;
+        /* ancho de cada opción en pantalla pequeña */
+        margin-bottom: 1em;
+    }
+}
+
+.table {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    color: #000;
+    background-color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

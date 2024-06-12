@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RegoBike</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="../static/estilaso5.css" />
+    <style>
+      h1 {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Usuarios listados</h1>
+
+    {% if usuario %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Password</th>
+          <th>rut</th>
+          <th>telefono</th>
+          <th>postal</th>
+          <th>nacimiento</th>
+          <th>region</th>
+          <th>comuna</th>
+          <th>calle</th>
+          <th>numero</th>
+          <th>piso</th>
+          <th>referencia</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for mostrar in usuario %}
+        <tr>
+          <td>{{mostrar.id}}</td>
+          <td> {{mostrar.nombre}} </td>
+          <td> {{mostrar.correo}} </td>
+          <td>{{mostrar.password}}</td>
+          <td> {{mostrar.rut}} </td>
+          <td> {{mostrar.telefono}} </td>
+          <td>{{mostrar.postal}}</td>
+          <td> {{mostrar.nacimiento}} </td>
+          <td> {{mostrar.region}} </td>
+          <td>{{mostrar.comuna}}</td>
+          <td> {{mostrar.calle}} </td>
+          <td> {{mostrar.numero}} </td>
+          <td>{{mostrar.piso}}</td>
+          <td> {{mostrar.referencia}} </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p>No hay datos</p>
+    {% endif %}
+
+  </body>
+</html>

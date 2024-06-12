@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RegoBike</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="../static/estilaso5.css" />
+    <style>
+      h1 {
+        color: white;
+      }
+      .pdf-link {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        color: #000;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Arriendos listados</h1>
+
+    {% if usuario %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Modelo</th>
+          <th>Precio base</th>
+          <th>Dias</th>
+          <th>Precio final</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Region</th>
+          <th>Telefono</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for mostrar in usuario %}
+        <tr>
+          <td>{{mostrar.id}}</td>
+          <td>{{mostrar.modelo}}</td>
+          <td>{{mostrar.precio_base}}</td>
+          <td>{{mostrar.dias}}</td>
+          <td>{{mostrar.precio_final}}</td>
+          <td>{{mostrar.nombre}}</td>
+          <td>{{mostrar.correo}}</td>
+          <td>{{mostrar.region}}</td>
+          <td>{{mostrar.telefono}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p>No hay datos</p>
+    {% endif %}
+
+    <div class="pdf-link">
+      <a href="{{ url_for('generar_pdf') }}"> <img src="../static/images/png-pdf-file-icon-8.png" width="25%"></a>
+    </div>
+  </body>
+</html>

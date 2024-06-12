@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RegoBike</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="../static/estilaso.css" />
+    <style>
+      h1 {
+        color: white;
+      }
+      p {
+        color: white;
+      }
+      h4{
+        color: white;
+      }
+      ol{
+        color: white;
+      }
+      div {
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="menu container">
+      <img class="logo-1" src="../static/images/logo.png" />
+      <input type="checkbox" id="menu" />
+      <label for="menu">
+        <img src="../static/images/menu.png" class="menu-icono" alt="" />
+      </label>
+
+      <nav class="navbar">
+        <div class="menu-1">
+          <ul>
+            <li><a href="{{ url_for('admin') }}">Inicio</a></li>
+            <li><a href="{{ url_for('arriendos') }}">Arriendos</a></li>
+            <li><a href="{{ url_for('productos') }}">Productos</a></li>
+            <li><a href="{{ url_for('repuestos') }}">Repuestos</a></li>
+          </ul>
+        </div>
+        <img class="logo-2" src="../static/images/logo.png" width="77" height="100" />
+        <div class="menu-2">
+          <ul>
+            <li><a href="{{ url_for('home') }}">Salir</a></li>
+          </ul>
+          <div class="socials">
+            <a href="https://www.facebook.com/profile.php?id=61560865134916" target="_blank">
+              <div class="social">
+                <img src="../static/images/s1.svg" alt="" />
+              </div>
+            </a>
+            <a href="https://x.com/RegoBike" target="_blank">
+              <div class="social">
+                <img src="../static/images/s2.svg" alt="" />
+              </div>
+            </a>
+            <a href="https://www.instagram.com/bikerg5/" target="_blank">
+              <div class="social">
+                <img src="../static/images/s3.svg" alt="" />
+              </div>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+
+<!--politicaPrivacidad-->
+  <div>  
+    <br><br><br><br><br><br><br>
+
+    <h1>Política de privacidad</h1>
+    <br><br>
+    <hr>
+    <br><br>
+    <h4>QUÉ INFORMACIÓN PERSONAL RECOPILAMOS</h4>
+    <br>
+    <p>Cuando visitas el Sitio, recopilamos automáticamente cierta información sobre tu dispositivo, incluida información sobre tu navegador web, dirección IP, zona horaria y algunas de las cookies que están instaladas en tu dispositivo.</p>
+    <br>
+    <p>Además, a medida que navegas por el Sitio, recopilamos información sobre las páginas web individuales o los productos que ves, qué sitios web o términos de búsqueda te remiten al Sitio, e información sobre cómo interactúas con el Sitio. Nos referimos a esta información recopilada automáticamente como <strong>Información del Dispositivo</strong> (device information).</p>
+    <br>
+    <p>Recopilamos información del dispositivo utilizando las siguientes tecnologías:   </p>
+    <br>
+    <p><strong>Cookies</strong>: son archivos de datos que se colocan en tu dispositivo o computadora y con frecuencia incluyen un identificador único anónimo.</p>
+    <br>
+    <p><strong>Archivos de registro</strong>: rastrean las acciones que ocurren en el Sitio y recopilan datos, incluida tu dirección IP, el tipo de navegador, el proveedor de servicios de Internet, las páginas de referencia/salida y las marcas de fecha y hora.</p>
+    <br>
+    <p>Además, cuando efectúas una compra o intentas realizar una compra a través del Sitio, recopilamos cierta información tuya, como tu nombre, rut,&nbsp;dirección de facturación, dirección de envío, información de pago, incluidos números de tarjetas de crédito y débito,&nbsp;dirección de email y el número de teléfono. Esto se denomina <strong>Información del Pedido</strong>.<br></p>
+    <br>
+    <p>Al referirnos a <strong>Información Personal</strong> en esta Política de Privacidad, estamos hablando tanto de la Información del Dispositivo como de la Información del Pedido.</p>
+    <br>
+    <h4>CÓMO USAMOS TU INFORMACIÓN PERSONAL</h4>
+    <br>
+    <p>Utilizamos la Información de Pedido que recopilamos por lo general para cumplir con los pedidos realizados a través del Sitio (incluido el procesamiento de tu información de pago, la organización del envío y el envío de facturas y/o confirmaciones de pedidos).</p>
+    <br>
+    <p>Además, usamos esta Información del Pedido para: comunicarnos contigo, examinar nuestros pedidos para detectar posibles riesgos o fraudes, para (en línea con las preferencias que has compartido con nosotros) ofrecerte información o publicidad relacionada con nuestros productos o servicios.</p>
+    <br>
+    <p>Utilizamos la Información del Dispositivo que recopilamos para ayudarnos a detectar posibles riesgos y fraudes (en particular, tu dirección IP) y, en general, para mejorar y optimizar nuestro sitio.</p>
+    <br>
+    <h4>COMPARTIENDO TU INFORMACIÓN PERSONAL</h4>
+    <br>
+    <p>Compartimos tu Información Personal con terceros para ayudarnos a utilizarla como se describió anteriormente.</p>
+    <br>
+    <p>También empleamos Google Analytics para ayudarnos a comprender cómo nuestros clientes usan RegoBike. Cómo usa Google tu Información Personal..</p>
+    <br>
+    <p>Finalmente, también podemos compartir tu Información Personal para cumplir con las leyes y regulaciones aplicables, para responder a una citación, una orden de registro u otras solicitudes legales de información que recibimos, o para proteger nuestros derechos.</p>
+    <br>
+    <h4>PUBLICIDAD DE COMPORTAMIENTO</h4>
+    <br>
+    <p>Utilizamos tu Información Personal para proporcionarte anuncios específicos o comunicaciones de marketing que creemos que pueden ser de tu interés.</p>
+    <br>
+    <p><em>Menciona los enlaces opt-out de servicios externos, tales como:</em></p>
+    <ol type=”A”>
+      <li>Facebook</li>
+      <li>Google</li>
+      <li>Instagram</li>
+      <li>Maling</li>
+    </ol>
+    <br>
+    <p>Puedes inhabilitar la publicidad dirigida...</p>
+    <br>
+    <h4>TUS DERECHOS</h4>
+    <br>
+    <p>Si eres un residente europeo, tienes derecho a acceder a la información personal que tenemos sobre ti y a solicitar que tu información personal se corrija, actualice o elimine. Si deseas ejercer este derecho, por favor contáctanos.</p>
+    <br>
+    <p>Además, si eres un residente europeo, notamos que estamos procesando tu información para cumplir con los contratos que podríamos tener contigo (por ejemplo, si realizas un pedido a través del Sitio), o de otra manera para perseguir nuestros intereses comerciales legítimos mencionados anteriormente.</p>
+    <br>
+    <p>Ten en cuenta que tu información se transferirá fuera de Europa, incluso a Canadá y Estados Unidos.</p>
+    <br>
+    <h4>RETENCIÓN DE DATOS</h4>
+    <br>
+    <p>Cuando realices un pedido a través del Sitio, mantendremos tu Información de Pedido para nuestros registros a menos que y hasta que nos solicites eliminar esta información.</p>
+    <br>
+    <h4>MENORES</h4>
+    <br>
+    <p>El Sitio no está destinado a personas menores de 18 años de edad </p>
+    <br>
+    <p><strong>CAMBIOS</strong>
+      Podemos actualizar esta política de privacidad de vez en cuando para reflejar, por ejemplo, cambios en nuestras prácticas o por otras razones operativas, legales o reglamentarias.</p>
+    <br>
+    <p>Si tiene preguntas y/o necesitas más información, no dudes en ponerte en contacto con nosotros al correo ventas@Rego-bike.cl    </p>  
+
+
+
+
+
+
+
+
+      <br><br><br><br>
+  </div> 
+<!--PARTE DE ABAJO-->
+    <section class="horario">
+      <div class="horario-info container">
+        <h2>Horario</h2>
+        <div class="horario-txt">
+          <div class="txt">
+            <h4>Direccion</h4>
+            <p>la pintana</p>
+            <p>venancia leiva</p>
+          </div>
+          <div class="txt">
+            <h4>Horario</h4>
+            <p>Lunes a viernes : 9am - 8pm</p>
+            <p>Sabado y Domingo : 11am - 7pm</p>
+          </div>
+          <div class="txt">
+            <h4>Telefonos</h4>
+            <p>+56 22 243 5210</p>
+            <p>+56 25 763 6324</p>
+          </div>
+          <div class="txt">
+            <h4>Redes Sociales</h4>
+            <div class="socials">
+              <a href="https://www.facebook.com/profile.php?id=61560865134916" target="_blank">
+                <div class="social">
+                  <img src="../static/images/s1.svg" alt="" />
+                </div>
+              </a>
+              <a href="https://x.com/RegoBike" target="_blank">
+                <div class="social">
+                  <img src="../static/images/s2.svg" alt="" />
+                </div>
+              </a>
+              <a href="https://www.instagram.com/bikerg5/" target="_blank">
+                <div class="social">
+                  <img src="../static/images/s3.svg" alt="" />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <iframe
+        class="map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32137.910189224436!2d-70.64716797902351!3d-33.571233035529055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662da11cc1a428b%3A0xd4008cf9b54a7c3f!2sVilla%20el%20Bosque%2C%208820251%20La%20Pintana%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1717457848000!5m2!1ses-419!2scl"
+        width="100%"
+        height="500"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </section>
+
+    <footer class="footer container">
+      <img class="logo-2" src="../static/images/logo.png" />
+      <div class="links">
+        <h4>Bicicletas</h4>
+        <ul>
+          <li><a href="#">Bicicletas de Montaña</a></li>
+          <li><a href="#">Bicicletas Eléctricas</a></li>
+          <li><a href="#">Bicicletas de Niño</a></li>
+          <li><a href="#">Bicicletas de Ruta</a></li>
+        </ul>
+      </div>
+      <div class="links">
+        <h4>Repuestos y Accesorios</h4>
+        <ul>
+          <li><a href="#">Sillas</a></li>
+          <li><a href="#">Cadenas</a></li>
+          <li><a href="#">Mazas</a></li>
+          <li><a href="#">Etc</a></li>
+        </ul>
+      </div>
+      <div class="links">
+        <h4>SERVICIO AL CLIENTE</h4>
+        <ul>
+          <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
+          <li><a href="{{ url_for('terminoycondiciones') }}">Términos y Condiciones</a></li>
+          <li><a href="{{ url_for('garantiaycambio') }}">Política de Garantías y Cambios</a></li>
+          <li><a href="{{ url_for('politicaprivacidad') }}">Política de privacidad</a></li>
+        </ul>
+      </div>
+      <div class="links">
+        <h4>Redes</h4>
+        <div class="socials">
+          <a href="https://www.facebook.com/profile.php?id=61560865134916" target="_blank">
+            <div class="social">
+              <img src="../static/images/s1.svg" alt="" />
+            </div>
+          </a>
+          <a href="https://x.com/RegoBike" target="_blank">
+            <div class="social">
+              <img src="../static/images/s2.svg" alt="" />
+            </div>
+          </a>
+          <a href="https://www.instagram.com/bikerg5/" target="_blank">
+            <div class="social">
+              <img src="../static/images/s3.svg" alt="" />
+            </div>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
